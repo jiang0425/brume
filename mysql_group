@@ -1,0 +1,14 @@
+摘要: Mysql 时间戳 年月日 分组统计
+        create_time时间格式
+
+        SELECT DATE_FORMAT(create_time,'%Y%u') weeks,COUNT(id) COUNT FROM role GROUP BY weeks;
+
+        SELECT DATE_FORMAT(create_time,'%Y%m%d') days,COUNT(id) COUNT FROM role GROUP BY days; 
+        SELECT DATE_FORMAT(create_time,'%Y%m') months,COUNT(id) COUNT FROM role GROUP BY months 
+        
+
+        create_time时间戳格式
+
+        SELECT FROM_UNIXTIME(create_time,'%Y%u') weeks,COUNT(id) COUNT FROM role GROUP BY weeks; 
+        SELECT FROM_UNIXTIME(create_time,'%Y%m%d') days,COUNT(id) COUNT FROM role GROUP BY days; 
+        SELECT FROM_UNIXTIME(create_time,'%Y%m') months,COUNT(id) COUNT FROM role GROUP BY months 
